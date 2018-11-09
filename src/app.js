@@ -5,12 +5,12 @@ import Login from './login'
 import Signup from './signup'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import NavBar from './Shared-Components/NavBar';
 
 class App extends Component {
   render() {
     return (
-      <div className="App container">
-        <p className="placeholder_style">Navbar Placeholder</p>
+      <div>
         <BrowserRouter>
           <div className="main_body_wrapper">
             <Route path="/" exact component={LandingPage}/>

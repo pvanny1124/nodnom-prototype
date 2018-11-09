@@ -1,0 +1,9 @@
+.navbar {
+      z-index: 4000;
+      position: fixed;
+      height: 75px;
+      width: 100%;
+      background-color: #FA485E;
+      box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.4);
+    
+}
