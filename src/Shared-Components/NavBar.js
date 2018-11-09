@@ -23,7 +23,12 @@ export default class NavBar extends React.Component {
           </div>
        {/*navbar for tablet and desktop (med and up)*/}
         <div className="col l6 s12 hide-on-small-only" >
-           <Link style={styles.link} to="/"> <img src="/images/nob-nom-logo.png"/> </Link>
+          <div className="col s2">
+            <Link style={styles.link} to="/"> <img src="/images/nob-nom-logo.png"/> </Link>
+          </div>
+          <div className="col s2 push-s8">
+            <Link style={styles.link} to="/login"> Log In </Link>
+          </div>
         </div>
 
       </div>
@@ -38,7 +43,8 @@ const styles = {
   link: {
     color: 'white',
     padding: '17px 0',
-    fontSize:'18px',
-    textAlign:'left'
+    fontSize:'25px',
+    textAlign:'left',
+    fontFamily: 'Acme'
   }
 }
