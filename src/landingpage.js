@@ -5,6 +5,7 @@ import Login from './login'
 import Signup from './signup'
 import './landingpage.css';
 import NavBar from './Shared-Components/NavBar';
+import LandingOne from './LandingPage/LandingOne';
 
 
 class LandingPage extends Component {
@@ -13,8 +14,7 @@ class LandingPage extends Component {
             <div className="landing-page">
               <NavBar/>
                 <div className="welcome">
-                    <div className="heading">Nobnom</div>
-                    <div className="heading-2">For food cart lovers</div>
+                  <LandingOne/>
                     <div className="btn-container">
                             <div className="form-group">
                                 <Link to="/signup" className="btn btn-dark">Sign Up</Link>

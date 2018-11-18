@@ -5,7 +5,6 @@ import Login from './login'
 import Signup from './signup'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import NavBar from './Shared-Components/NavBar';
 
 class App extends Component {
   render() {
