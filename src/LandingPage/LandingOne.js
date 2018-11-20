@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import halal from '../images/halal.png'
 
 
-export default class NavBar extends React.Component {
+export default class landingone extends React.Component {
   constructor(props){
         super(props);
   }
@@ -23,9 +23,7 @@ export default class NavBar extends React.Component {
               For Food Cart Lovers
             </div>
           </div>
-          hey
         </div>
-
       </div>
     )
   }

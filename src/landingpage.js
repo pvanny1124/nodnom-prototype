@@ -6,6 +6,7 @@ import Signup from './signup'
 import './landingpage.css';
 import NavBar from './Shared-Components/NavBar';
 import LandingOne from './LandingPage/LandingOne';
+import Howitworks from './LandingPage/howitworks';
 
 
 class LandingPage extends Component {
@@ -15,6 +16,7 @@ class LandingPage extends Component {
               <NavBar/>
                 <div className="welcome">
                   <LandingOne/>
+                  <Howitworks/>
                     <div className="btn-container">
                             <div className="form-group">
                                 <Link to="/signup" className="btn btn-dark">Sign Up</Link>
