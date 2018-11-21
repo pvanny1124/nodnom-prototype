@@ -27,11 +27,15 @@ export default class NavBar extends React.Component {
           <div className="col s2">
             <Link style={styles.link} to="/"> <img src={logo}/> </Link>
           </div>
-          <div className="col s2 push-s8">
+          <div className="col s2 push-s7">
             <Link style={styles.link} to="/login"> Log In </Link>
           </div>
+          <div className="col s2 push-s6">
+            <div style={styles.button}>
+              <Link style={styles.link} to="/login"> Sign Up </Link>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -43,9 +47,17 @@ export default class NavBar extends React.Component {
 const styles = {
   link: {
     color: 'white',
-    padding: '17px 0',
+    //padding: '0 0 0 20px',
     fontSize:'25px',
-    textAlign:'left',
+    textAlign:'right',
     fontFamily: 'Acme'
+  },
+  button: {
+    borderStyle: 'solid',
+    borderColor: '#FBDB58',
+    backgroundColor: '#FFCE02',
+    borderRadius: '8px',
+    padding: '0 0 0 25%'
   }
+
 }

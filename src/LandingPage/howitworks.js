@@ -56,11 +56,8 @@ export default class howitworks extends React.Component {
               <div className="section"/>
               <div className="container" style={styles.text}> Order from a local and support your community! </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
     )
   }
