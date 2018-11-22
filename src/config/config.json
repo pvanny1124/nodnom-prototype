@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "iamironman",
+    "database": "nobnom",
+    "port": "5432",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "nobnom",
+    "password": "swaggy1124",
+    "database": "nobnomtester",
+    "host": "testnobnom.cvl52s4nkxye.us-east-1.rds.amazonaws.com",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

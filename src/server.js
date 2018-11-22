@@ -1,19 +1,29 @@
-var Sequelize           = require('sequelize'),
-    express             = require('express'),
-    bodyParser          = require('body-parser'),
-    Passport            = require('passport'),
-    localStrategy       = require('passport-local'),
-    PostGres            = require('pg');
+var Sequelize           = require('sequelize');
+const express           = require('express');
+const bodyParser        = require('body-parser');
+const cookieParser      = require('cookie-parser');
+const expressSession    = require('express-session');
+const passport          = require('./middlewares/auth');
+const controllers       = require('./controllers');
+const passport          = require('./middlewares/auth');     
 
-require('dotenv').config();
-var Sequelize  = require('sequelize');
-
-
-//-----------------------------Main Configuration-------------------------------//
-
+//Configuration of middleware
 var app = express();
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public")); 
+app.use(cookieParser());
+
+app.use(expressSession(({
+  secret: 'keyboard cat - REPLACE ME WITH A BETTER SECRET',
+  resave: false,
+  saveUninitialized: true,
+})));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(controllers);
+    
 
 
 //---------------------------Passport Configuration----------------------------//
@@ -21,33 +31,7 @@ var APIURL = ""; //Api reference link will go here
 
 //------------------------------Api Routes-----------------------------------//
 
-//connect
-console.log(process.env.user)
 
-console.log(process.env.PASSWORD)
-
-console.log(process.env.DB)
-
-console.log(process.env.ENDPOINT)
-
-var sequelize = new Sequelize({
-    username: process.env.USER,
-    password:process.env.PASSWORD,
-    database: process.env.DB,
-    host: process.env.ENDPOINT,
-    port: 5432,
-    dialect: 'postgres'
-});
-
-
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
 
 //Serve our app on the port we specify
 app.listen(process.env.PORT, process.env.IP, () => {
