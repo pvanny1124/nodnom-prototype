@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom'
 import LandingPage from './landingpage';
 import Login from './login';
-import Signup from './signup';
-import Navbar from './navbar';
+//import Signup from './signup';
+//import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -39,21 +39,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App container">
-          <BrowserRouter>
-            { this.state.isLoading ? (
-                   <div>Loading.. please wait!</div>
-               ) : (
-                <div className="main_body_wrapper">
-                  <Route path="/" exact component={LandingPage} />
-                  <Route path="/signup" component={Signup} />
-                  <Route path="/login" component={Login} />
-                  <Route path="/dashboard/:user" component={Dashboard} />
-                </div>
-            )}
-          </BrowserRouter>
-      
-        <p className="placeholder_style footer">Footer Placeholder</p>
+      <div>
+        <BrowserRouter>
+          <div className="main_body_wrapper">
+            <Route path="/" exact component={LandingPage}/>
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/user/:id/dashboard" />
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
