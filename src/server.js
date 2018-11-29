@@ -4,8 +4,7 @@ const bodyParser        = require('body-parser');
 const cookieParser      = require('cookie-parser');
 const expressSession    = require('express-session');
 const passport          = require('./middlewares/auth');
-const controllers       = require('./controllers');
-const passport          = require('./middlewares/auth');     
+const controllers       = require('./controllers');    
 
 //Configuration of middleware
 var app = express();
@@ -22,18 +21,22 @@ app.use(expressSession(({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Always stup controllers after passport configuration to ensure that the middleware is attached to the routes
+//provided by the controllers routes.
 app.use(controllers);
     
 
 
 //---------------------------Passport Configuration----------------------------//
 var APIURL = ""; //Api reference link will go here
+const PORT = 8081;
 
 //------------------------------Api Routes-----------------------------------//
 
 
 
 //Serve our app on the port we specify
-app.listen(process.env.PORT, process.env.IP, () => {
-    console.log("Now serving port: " + process.env.PORT);
+app.listen(PORT, process.env.IP, () => {
+    console.log("Now serving port: " + PORT);
 })

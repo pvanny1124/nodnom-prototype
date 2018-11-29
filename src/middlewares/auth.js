@@ -48,4 +48,4 @@ passport.redirectIfLoggedIn = (route) =>
 passport.redirectIfNotLoggedIn = (route) =>
   (req, res, next) => (req.user ? next() : res.redirect(route));
 
-module.exports = passport;a
+module.exports = passport;

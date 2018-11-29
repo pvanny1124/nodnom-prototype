@@ -54,16 +54,16 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       country: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       }
   });
 

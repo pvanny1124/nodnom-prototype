@@ -8,10 +8,10 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "nobnom",
-    "password": "swaggy1124",
-    "database": "nobnomtester",
-    "host": "testnobnom.cvl52s4nkxye.us-east-1.rds.amazonaws.com",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "nobnom",
+    "host": "127.0.0.1",
     "port": "5432",
     "dialect": "postgres"
   },
