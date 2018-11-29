@@ -12,27 +12,20 @@ class Client extends Component {
 
     render(){    
 
-        function showPosition(position) {
-            var coords = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            }
-        }
-        
-        function getLocation() {
-            if (navigator.geolocation) {
-                console.log(navigator.geolocation.getCurrentPosition(showPosition));
-            } else {
-                console.log("Geolocation is not supported by this browser.");
-            }
-        }
-        
-        geoLocation()
-        
-         
+        //get user location at start
+        fetch("https://ipinfo.io/json").then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            var location = data.loc.split(",");
+            var lat = location[0];
+            var lng = location[1];
+            
+        })
+
         return (
             <div>     
-
+            <p>{"stuff"}</p>
             </div>
             
         );
@@ -44,6 +37,8 @@ function showPosition(position) {
         lat: position.coords.latitude,
         lng: position.coords.longitude
     }
+
+    return coords
 }
 
 function getLocation() {
