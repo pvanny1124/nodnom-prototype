@@ -8,13 +8,42 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+      super(props);
+      this.state = {
+        user: null,
+        isLoading: true
+      }
+  }
+
+  getUserData(user){
+    this.setState({user: user});
+  }
+
+  componentWillMount(){
+    //check if user is already logged in session
+    fetch("/api/auth")
+      .then(response => {
+          console.log(response);
+          return response.json();
+      })
+      .then(data => {
+          this.setState({user: data, isLoading: false});
+          console.log(data);
+      })
+      .catch(error => {
+        this.setState({isLoading: false})
+          console.log(error);
+      })
+  }
+
   render() {
     return (
       <div>
         <BrowserRouter>
           <div className="main_body_wrapper">
             <Route path="/" exact component={LandingPage}/>
-            {/* <Route path="/signup" component={Signup} />*/}
+            <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/user/:id/dashboard" />
           </div>
