@@ -9,14 +9,14 @@ module.exports = {
         autoIncrement: true,
         allowNull: false
       },
-      firstName: {
+      first_name: {
           type: Sequelize.STRING,
           allowNull: false,
           validate: {
             notEmpty: true,
           },
         },
-      lastName: {
+      last_name: {
           type: Sequelize.STRING,
           allowNull: false,
           validate: {
@@ -71,12 +71,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
+    return queryInterface.dropTable('vendors');
   }
 };

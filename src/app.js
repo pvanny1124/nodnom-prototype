@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom'
 import LandingPage from './landingpage';
 import Login from './login';
+import Signup from './components/Signup'
 //import Signup from './signup';
 //import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 class App extends Component {
-  constructor(){
+  constructor(props){
       super(props);
       this.state = {
         user: null,

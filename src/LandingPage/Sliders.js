@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import halal from '../images/halal.png'
 
 
-export default class landingone extends React.Component {
+class Sliders extends Component {
   constructor(props){
         super(props);
   }
 
   render() {
+          
+          
     return (
       <div>
         <div className="hide-on-med-and-up">
@@ -44,3 +46,5 @@ const styles = {
     paddingTop: '40px'
   }
 }
+
+export default Sliders;
