@@ -22,6 +22,10 @@ export default class landingone extends React.Component {
             <div style={styles.link}>
               For Food Cart Lovers
             </div>
+          {/*just adding some padding here*/}
+            <div className="section"></div>
+            <div className="section"></div>
+            <div className="section"></div>
           </div>
         </div>
       </div>

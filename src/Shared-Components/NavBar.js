@@ -32,7 +32,7 @@ export default class NavBar extends React.Component {
           </div>
           <div className="col s2 push-s6">
             <div style={styles.button}>
-              <Link style={styles.link} to="/login"> Sign Up </Link>
+              <Link style={styles.link} to="/signup"> Sign Up </Link>
             </div>
           </div>
         </div>

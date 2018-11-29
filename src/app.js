@@ -18,7 +18,7 @@ class App extends Component {
             <Route path="/user/:id/dashboard" />
           </div>
         </BrowserRouter>
-        <p className="placeholder_style footer">Footer Placeholder</p>
+        {/*put footer here*/}
       </div>
     );
   }

@@ -7,6 +7,7 @@ import './landingpage.css';
 import NavBar from './Shared-Components/NavBar';
 import LandingOne from './LandingPage/LandingOne';
 import Howitworks from './LandingPage/howitworks';
+import Footer from './Shared-Components/footer';
 
 
 class LandingPage extends Component {
@@ -17,28 +18,8 @@ class LandingPage extends Component {
                 <div className="welcome">
                   <LandingOne/>
                   <Howitworks/>
-                    <div className="btn-container">
-                            <div className="form-group">
-                                <Link to="/signup" className="btn btn-dark">Sign Up</Link>
-                            </div>
-                            <div className="form-group">
-                                <Link to="/login" className="btn btn-dark">Login</Link>
-                            </div>
-                    </div>
+                  <Footer/>
                 </div>
-
-
-                <div className="midas-about">
-                        <p>stuff</p>
-                </div>
-                <div className="team-about">
-
-                </div>
-                <div className="footer">
-
-                </div>
-
-
             </div>
 
         );
