@@ -3,8 +3,6 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import LandingPage from './landingpage';
 import Login from './login';
 import Signup from './components/Signup';
-//import Signup from './signup';
-//import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
