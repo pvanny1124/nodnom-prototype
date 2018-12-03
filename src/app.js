@@ -5,6 +5,7 @@ import Login from './login';
 import Signup from './components/Signup';
 //import Signup from './signup';
 //import Navbar from './navbar';
+import Home from './components/Home/Home.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -46,6 +47,7 @@ class App extends Component {
             <Route path="/" exact component={LandingPage}/>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
+            <Route path='/home' component={Home}/>
             <Route path="/user/:id/dashboard" />
           </div>
         </BrowserRouter>
