@@ -69,7 +69,10 @@ class Login extends Component {
                     <div className="form-group">
                         <button type="submit" className="login-btn btn btn-dark">Log In</button>
                     </div>
-                    <Link className="not-user" to="/signup">Not a user? Create an account</Link>
+                        <Link className="not-user" to="/signup/users">Not a user? Create an account here!</Link>
+                    </div>
+                    <div>
+                        <Link className="not-user" to="/signup/vendors">Want to enroll as a Vendor? Create your business' account here!</Link>
                     </div>
                 </form>
         
