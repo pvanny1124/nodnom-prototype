@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom'
-import LandingPage from './landingpage';
+import LandingPage from './LandingPage/LandingPage';
 import SignupAsUser from './components/SignupAsUser'
 import SignupAsVendor from './components/SignupAsVendor'
 import Login from './components/Login'
@@ -45,7 +45,7 @@ class App extends Component {
             <Route path="/" exact component={LandingPage}/>
             <Route path="/signup/users" render={() => <SignupAsUser getUser={(user) => this.getUserData(user)} />} />
             <Route path="/signup/vendors" render={() =>  <SignupAsVendor getUser={(user) => this.getUserData(user)}/> } />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={() => <Login getUser={(user) => this.getUserData(user)} />} />
             <Route path="/user/:id/dashboard" /> 
             <Route path="/vendor/:id/dashboard" />
           </div>

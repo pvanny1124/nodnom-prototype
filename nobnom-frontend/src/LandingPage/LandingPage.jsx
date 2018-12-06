@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import {browserHistory} from 'react-router';
-import Login from './login'
-import Signup from './signup'
-import NavBar from './Shared-Components/NavBar';
-import Sliders from './LandingPage/Sliders';
-import Howitworks from './LandingPage/howitworks';
-import Footer from './Shared-Components/footer';
+import NavBar from '../Shared-Components/NavBar';
+import Sliders from './Sliders';
+import Howitworks from './howitworks';
+import Footer from '../Shared-Components/Footer';
 
 
 class LandingPage extends Component {
@@ -19,6 +17,8 @@ class LandingPage extends Component {
     }
 
     componentDidMount() {
+
+        //Need to reference the component instance. Just setting this.setState(..) inside of getCurrentPosition will reference the wrong "this"...
         let self = this;
         if ("geolocation" in navigator) {
             // check if geolocation is supported/enabled on current browser
@@ -45,9 +45,9 @@ class LandingPage extends Component {
             }  
             );
         } else {
-        // geolocation is not supported
-        // get your location some other way
-        console.log('geolocation is not enabled on this browser')
+                // if geolocation is not supported
+                // get your location some other way
+                console.log('geolocation is not enabled on this browser')
         }
     }
 

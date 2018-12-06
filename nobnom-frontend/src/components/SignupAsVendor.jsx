@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import {Link, Route, Redirect, withRouter} from 'react-router-dom';
+import {Link, 
+        Route, 
+        Redirect, 
+        withRouter //need withRouter to push (redirect) to a new route with this.props.history.push(<route>)...
+       } from 'react-router-dom';
 
 
 class SignupAsVendor extends Component {
@@ -161,4 +165,4 @@ class SignupAsVendor extends Component {
     
 }
 
-export default withRouter(SignupAsVendor);;
+export default withRouter(SignupAsVendor); 

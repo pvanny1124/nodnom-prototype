@@ -4,11 +4,12 @@ const passport = require('../middlewares/auth')
 
 const router = express.Router();
 
-router.post('/login', (req, res) => {
-  passport.authenticate('local', {
-      successRedirect: '/profile',
-      failureRedirect: '/login'
-  })(req, res);
+router.get("/users/:id/dashboard", (req, res) => {
+    //TODO
+})
+
+router.get("/vendors/:id/dashboard", (req, res) => {
+  //TODO
 })
 
 router.get('/logout', (req, res) => {

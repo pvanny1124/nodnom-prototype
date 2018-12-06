@@ -78,12 +78,12 @@ router.post('/signup/vendors', (req, res) => {
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/auth/error' }),
   (req, res) => {
-    res.json({
-      id: req.user.id,
-      firstName: req.user.firstName,
-      lastName: req.user.lastName,
-      email: req.user.email,
-    });
+      if(!req.user){
+        return res.status(200).json({ vendor: req.vendor })
+      } else {
+        return res.status(200).json({ user: req.user })
+      }
+
   });
 
 
@@ -96,7 +96,7 @@ router.get('/logout', (req, res) => {
 router.get('/profile',
   passport.redirectIfNotLoggedIn('/auth/error'),
   (req, res) => {
-    res.json({ msg: "This is the profile page for: "+req.user.email });
+    res.json({ msg: "This is the profile page for: "+req.user.email});
 });
 
 
