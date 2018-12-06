@@ -38,17 +38,23 @@ class Login extends Component {
             console.log(response);
             return response.json();
         })
-        .then(user => {
+        .then(data => {
 
-            //check if the user is either a user or a vendor... 
-            if(user.isUser){
+            //To not confuse a vendor-user and a user-user, let's use guest for someone who is just logging in.
+            let guest = data.user;
 
-                //Save user in App.js state
+            //Also note: we will be checking if the guest is a vendor by checking if the guest has a vendorName field attached to their data object.
+            
+            //Now, Check if the guest is a user... 
+            if(!guest.vendorName){
+                //  If they are...
+                //  Save vendor in App.js state
 
                 //create new user object with the old keys but add the isUser field as well
                 //to let the client know that this is a user.
-                let user = Object.assign({}, user.userData, {isUser: true});
+                let user = Object.assign({}, guest, {isUser: true});
                 this.props.getUser(user);
+                console.log(user);
 
                 //Get user's id to pass into url
                 let userId = user.id;
@@ -56,22 +62,25 @@ class Login extends Component {
 
                 //Bring the user to their dashboard on the client
                 this.props.history.push(userRoute);
+                return;
 
-            } else if(user.isVendor){
-
+            } else if(guest.vendorName){
+                //If the guest is a vendor...
                 //Save user (vendor) data in App.js state
 
                 //create new vendor object with the old keys but add the isUser field as well
                 //to let the client know that this is a user.
-                let vendor = Object.assign({}, user.vendorData, {isVendor: true});
+                let vendor = Object.assign({}, guest, {isVendor: true});
                 this.props.getUser(vendor);
 
                 //Get user's id to pass into vendorRoute url
                 let vendorId = vendor.id;
                 let vendorRoute = `/vendor/${vendorId}/dashboard`;
+                console.log(vendorRoute)
 
                 //Bring the vendor to their dashboard on the client
                 this.props.history.push(vendorRoute);
+                return;
             }
         })
         .catch(error => {

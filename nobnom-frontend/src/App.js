@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   getUserData(user){
+    console.log(user);
     this.setState({user: user});
   }
 
@@ -38,6 +39,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div>
         <BrowserRouter>
