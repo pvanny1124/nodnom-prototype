@@ -86,7 +86,7 @@ export default class Home extends Component {
   }
 }
 
-//AIzaSyBtHDU8h0wlCgTNbfoQJTxp3st0xh8Flr0
+
 //
 
 
