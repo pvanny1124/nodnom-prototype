@@ -5,9 +5,10 @@ import Login from './login';
 import Signup from './components/Signup';
 //import Signup from './signup';
 //import Navbar from './navbar';
-import Home from './components/Home/Home.js'
+import Home from './Home/home.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import Navbar from './Shared-Components/NavBar';
 
 class App extends Component {
   constructor(props){
@@ -43,7 +44,8 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className="main_body_wrapper">
+         <div className="main_body_wrapper">
+          <Navbar/>
             <Route path="/" exact component={LandingPage}/>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
