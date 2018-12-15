@@ -117,6 +117,7 @@ const MapComponent = compose(
 
   //Checks if there is food being sent into the component to render places or not.
   if(props.food){
+    console.log("coming from maps_api")
     return (
       <div>
       {/* // Displays Gmap with specific user location and restaurant based on randomly selected food. */}

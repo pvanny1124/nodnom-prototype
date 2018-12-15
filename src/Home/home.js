@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {withScriptjs, withGoogleMap, GoogleMap} from 'react-google-maps';
+//import {withScriptjs, withGoogleMap, GoogleMap} from 'react-google-maps';
 import Vendors from './vendor_component';
 //import mapwmarkers from '../../images/mapwmarkers.png';
 import Maps from './google_maps_component.js';
@@ -23,7 +23,8 @@ let vendor =
     "location": "600 6th Avenue",
     "createdAt": "date-object",
     "updatedAt": "date-object",
-    "rating": 5,
+    "rating": 2,
+    "ratings": 3,
     "lat": 45.4,
     "lng": 55.4
   },
@@ -40,7 +41,8 @@ let vendor =
     "location": "600 6th Avenue",
     "createdAt": "date-object",
     "updatedAt": "date-object",
-    "rating": 5,
+    "rating": 4.7,
+    "ratings": 3,
     "lat": 85.4,
     "lng": 25.4
   }
@@ -54,6 +56,12 @@ export default class Home extends Component {
       data: [],
       isLoading: false,
     };
+  }
+  render_stars() {
+
+    //if no rating return "No rating"
+
+    //if rating is a double convert to int, minus from double -> whole stars and render one half star
   }
    render() {
 

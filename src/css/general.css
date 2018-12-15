@@ -8,6 +8,34 @@ TABLE OF CONTENTS
 /* 1.Landing Page Custom CSS
 ---------------------------------------*/
 /*this chunk of css for font isn't used right now*/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../css/fonts/icon.woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+.md-icon{
+ font-family: 'Material Icons' !important;
+}
+.mat-icon{
+ font-family: 'Material Icons' !important;
+}
 .landing-heading {
   font-family: 'Acme', sans-serif;
 }

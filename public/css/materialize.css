@@ -3,6 +3,13 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+ .md-icon{
+  font-family: 'Material Icons' !important;
+}
+.mat-icon{
+  font-family: 'Material Icons' !important;
+}
+
 .materialize-red {
   background-color: #e51c23 !important;
 }

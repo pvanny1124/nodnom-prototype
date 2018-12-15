@@ -11,20 +11,24 @@ export default class GoogleMapComponent extends React.PureComponent {
 
     constructor(props) {
         super(props);
-        console.log("this.props.food: "+JSON.stringify(this.props.food));
+        //console.log("this.props.food: "+JSON.stringify(this.props.food));
         this.state = {
-            randomFoodName: props.food,
-            addressName: props.address,
-            lat: props.lat,
-            lng: props.lng,
+            randomFoodName: props.food[0].categories[1],
+            addressName: props.food[0].location,
+            lat: props.food[0].lat,
+            lng: props.food[0].lng,
             storeLocation: props.storeL,
             storeName: props.storeN,
-            storeLatitude: props.storeLat,
-            storeLongitude: props.storeLng,
+            storeLatitude: 4.77,
+            storeLongitude: 43.3,
             processing: false,
 
         };
+        console.log(this.state.lat)
+        console.log(this.state.lng)
+        console.log(this.state.addressName)
         this.renderMaps = this.renderMaps.bind(this);
+
     }
     //function that can get the info from section 1.
     updateMarker = (storeL, storeLat , storeLng , storeN) => {
@@ -37,7 +41,7 @@ export default class GoogleMapComponent extends React.PureComponent {
     // Thats basically how recompose works, it lets you change the info thats going into the map on the fly
     // its still kinda weird but still, it works ! lol
     renderMaps() {
-      console.log("rendering map with food")
+      //console.log("rendering map with food")
         return (
             <div className="card">
                 <MapComponent food={this.state.randomFoodName}
@@ -63,7 +67,7 @@ export default class GoogleMapComponent extends React.PureComponent {
         );
       }
     render() {
-
+    
         return (
           <div>
               {!!this.props.food
