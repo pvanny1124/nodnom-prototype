@@ -1,8 +1,9 @@
+//use version 1 of uuid to create a unique identifier
+const uuidv1 = require('uuid/v1');
 const bcrypt = require('bcrypt-nodejs');
-
 module.exports = (sequelize, DataTypes) => {
      
-    const Vendor = sequelize.define('vendors', {
+  const Vendor = sequelize.define('Vendors', {
         // disable the modification of tablenames; By default, sequelize will automatically
         // transform all passed model names (first parameter of define) into plural.
         // if you don't want that, set the following
@@ -12,6 +13,15 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false
       },
+
+      menuId: {
+        type: DataTypes.UUIDV1,
+        primaryKey: true,
+        unique: true,
+        allowNull: false,
+        defaultValue: uuidv1()
+      },
+
       firstName: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -33,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: true,
         },
       },
+      
       username: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -72,7 +83,12 @@ module.exports = (sequelize, DataTypes) => {
       }
   });
 
-    Vendor.beforeCreate((user) =>
+  Vendor.associate = function (models) {
+    // associations can be defined here
+    Vendor.hasMany(models.FoodItems, {foreignKey: "menuId", sourceKey: "menuId"})
+  };
+
+  Vendor.beforeCreate((user) =>
           new sequelize.Promise((resolve) => {
               bcrypt.hash(user.password_hash, null, null, (err, hashedPassword) => {
                   resolve(hashedPassword);

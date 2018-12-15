@@ -2,12 +2,18 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("vendors", {
+    return queryInterface.createTable("Vendors", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
+      },
+      menuId: {
+        type: Sequelize.UUID,
+        primaryKey: true,
+        allowNull: false,
+        unique: true
       },
       firstName: {
           type: Sequelize.STRING,
@@ -71,6 +77,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('vendors');
+    return queryInterface.dropTable('Vendors');
   }
 };
+
+
