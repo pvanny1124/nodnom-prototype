@@ -9,6 +9,7 @@ import Home from './Home/home.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navbar from './Shared-Components/NavBar';
+import Menu from './Menu/menu.js'
 
 class App extends Component {
   constructor(props){
@@ -49,7 +50,8 @@ class App extends Component {
             <Route path="/" exact component={LandingPage}/>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path='/home' component={Home}/>
+            <Route path="/home" component={Home}/>
+            <Route path="/menu" component={Menu}/>
             <Route path="/user/:id/dashboard" />
           </div>
         </BrowserRouter>

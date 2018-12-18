@@ -1,13 +1,24 @@
 /* This is Yukkee being sloppy with the custom CSS!! Will refactor to sass soon
 TABLE OF CONTENTS
 1. Landing Page CSS
-2.
+2. Buttons
 ---------------------------------------*/
 
-
-/* 1.Landing Page Custom CSS
+/* 0.General CSS
 ---------------------------------------*/
-/*this chunk of css for font isn't used right now*/
+@font-face {
+  font-family: 'Avenir';
+  font-weight: 400;
+  src: url('./fonts/Avenir/AvenirNextLTPro-Regular.woff') format("woff"),
+       url('./fonts/Avenir/AvenirNextLTPro-Regular.woff2')  format("woff2");
+}
+div{
+    font-family: 'Avenir';
+}
+body{
+  background-color: #F7F7F7;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -36,6 +47,9 @@ TABLE OF CONTENTS
 .mat-icon{
  font-family: 'Material Icons' !important;
 }
+
+/* 1.Landing Page Custom CSS
+---------------------------------------*/
 .landing-heading {
   font-family: 'Acme', sans-serif;
 }
@@ -55,3 +69,19 @@ TABLE OF CONTENTS
 
 /* 2.
 ---------------------------------------*/
+/*Buttons*/
+.button {
+  border-style: solid;
+  border-radius: 8px;
+  padding: 0 0 0 25%;
+}
+.button-navbar {
+  border-color: #FBDB58;
+  background-color: #FFCE02;
+}
+.button-menu {
+  padding: 0% 0 0 20%;
+  border-color: #FA485E;
+  background-color: none;
+  height: 40px;
+}

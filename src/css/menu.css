@@ -1,0 +1,68 @@
+  .image {
+      object-fit: cover;
+      width: 100%;
+      height: 270px;
+      background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+      z-index: 1;
+      /*opacity: 0.7;*/
+  }
+
+  .relative {
+    position: relative;
+    width: 100%;
+    height: 50%;
+
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .text {
+    font-size: 22px;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .text-white {
+    color: white;
+    font-weight: bold;
+  }
+  .text-header {
+      font-size: 45px;
+  }
+  .back {
+    font-size: 60px;
+    color: white;
+  }
+  .padding-none {
+    padding: 0px;
+  }
+  /*padding for cards*/
+  .padding {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .category-title {
+    font-size: 25px;
+  }
+  .category-price {
+    font-size: 20px;
+    color: #5E5E5E;
+  }
+  .category-name {
+    font-size: 20px;
+    color: #FA485E;
+  }
+  .category-description {
+    font-size: 15px;
+    color: #5E5E5E;
+  }
+
+  .thumb {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 85px;
+    max-height: 100px;
+  }
