@@ -1,9 +1,10 @@
+
   .image {
       object-fit: cover;
       width: 100%;
       height: 270px;
-      background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-      z-index: 1;
+      z-index: -10;
+      filter: brightness(50%);
       /*opacity: 0.7;*/
   }
 
@@ -18,8 +19,15 @@
     position: absolute;
   }
 
+  .forward {
+    z-index: 50;
+  }
+
   .text {
-    font-size: 22px;
+    font-size: 18px;
+  }
+  .text-small  {
+    font-size: 14px;
   }
   .bold {
     font-weight: bold;

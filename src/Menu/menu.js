@@ -46,7 +46,7 @@ export default class Menu extends Component {
       <div>
         <div className="row">
           <div className="col s12" >
-           <Header/>
+           <Header menu={menu}/>
            {/*menu cards*/}
            <div className="col s12">
             <div className="col s5"><Card menu={menu}/></div>
