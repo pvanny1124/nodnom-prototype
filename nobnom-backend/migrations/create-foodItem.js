@@ -18,6 +18,9 @@ module.exports = {
           itemName: {
             type: Sequelize.STRING
           },
+          price: {
+            type: Sequelize.INTEGER
+          },
           category: {
               type: Sequelize.STRING
           },
